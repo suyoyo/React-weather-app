@@ -3,9 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://kit.fontawesome.com/738b4e3bc3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>React Weather App</title>
 </head>
 <body>
-    
+<div class="container">
+    <div class="weather-app-wrapper">
+        <div class="weather-app">
+            <form id="search-form" class="mb-3">
+                <div class="row">
+                    <div class="col-8">
+                        <input type="search" placeholder="Type a city..." class="form-control" id="city-input"
+                            autocomplete="off" />
+                    </div>
+                    <div class="col-3">
+                        <input type="submit" value="Search" class="btn btn-primary w-100" />
+                    </div>
+                    <div class="col-1">
+                        <button class="current-location-button btn btn-primary w-100">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="overview">
+                <h1 id="city"></h1>
+                <ul>
+                    <li>Last updated: <span id="date"></span></li>
+                    <li id="description"></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="clearfix weather-temperature">
+                        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="cloudy"
+                            class="float-left" id="icon">
+                        <div class="float-left">
+                            <strong id="temperature"></strong>
+                            <span class="units"><a href="#" id="celsius-link" class="inactiv">°C</a> | <a href="#"
+                                    id="fahrenheit-link">°F</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li>
+                            Humidity: <span id="humidity"></span>%
+                        </li>
+                        <li>
+                            Wind: <span id="wind"></span>km/h
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="row weather-forcast" id="forcast">
+
+            </div>
+        </div>
+        <small>
+            <a href="https://github.com/suyoyo/Color-weather-app" target="_blank">Open source code</a> by Hsuan-yu Su
+        </small>
+    </div>
+</div>
+<script src="src/app.js"></script>
+
 </body>
 </html>
